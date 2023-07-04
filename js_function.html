@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*sum(10,25) -> error 발생, 변수 호이스팅으로 인한,,*/
+        var sum = function(num1, num2){
+            console.log(num1 + num2);
+        }
+        sum(10,25)
+
+        /* 일반적인 함수 호출에는 문제 없음!! */
+        miu(25,10)
+        function miu(num1, num2){
+            console.log(num1-num2)
+        }
+        miu(25,10)
+    </script>
+</head>
+<body>
+    <button id="btn">click!!</button>
+    <script type="text/javascript">
+        var btn = document.getElementById('btn');
+        btn.addEventListener('click', function(){
+            console.log('안녕하세요')
+        });
+    </script>
+    
+</body>
+</html>
