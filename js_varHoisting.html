@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log(temp);
+        var temp = 0;
+
+        console.log('hello')
+        console.log('hello')
+        console.log('hello')
+        console.log('hello')
+        console.log('hello')
+        console.log('hello')
+        console.log('hello')
+
+        var temp = "bye"
+
+        const pi = 3.14;
+        /* pi = 2;  error발생, 상수는 변경 못해 */
+
+        /* let과 const */
+
+        { /* hoisting발생, scope안의 값이 자동으로 전역변수로 설정 */
+            console.log(temp);
+            var temp2 = "again";
+            console.log(temp2);
+        }
+        console.log(temp2); 
+
+        /* let은 hoisting 발생 안함 */
+        {
+            let temp3 = 'temp3';
+            console.log(temp3);
+        }
+        /* console.log(temp3); 오류 발생: temp3 is not defined */
+        
+        /* 연산자 == / === 비교 */
+        let num1 = "10";
+        let num2 = 10;
+
+        console.log(num1==num2)
+        console.log(num1===num2)
+    
+        </script>
+    </body>
+</html>
