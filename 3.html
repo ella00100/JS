@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var msg = document.getElementById('temp')
+
+            console.log(msg)
+            msg.append('아이디로 들고 있음')
+
+            var test = document.getElementsByClassName('test1')
+            var color = ['orange', 'cyan', 'red']
+            console.log(test)
+
+            for(var i=0; i<test.length; i++){
+                test[i].style.background = color[i]
+            }
+
+            //태그명으로 들고오기!
+            var test = document.getElementsByTagName('h3');
+            var color = ['cyan', 'red', 'orange']
+            
+            for(var i=0; i<test.length; i++){
+                test[i].style.color = color[i]
+            }
+
+            //네임 속성으로 가져오기!
+            var test = document.getElementsByName('test2');
+            var color = ['cyan', 'red', 'orange']
+            
+            for(var i=0; i<test.length; i++){
+                test[i].style.border = `3px solid ${color[i]}`;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="temp">
+        <h2 id="header">After lunch</h2>
+    </div>
+
+    <h3 class="test1" name="test2">이쪽 모든 내용을 들고 갈게요1</h3>
+    <h3 class="test1" name="test2">이쪽 모든 내용을 들고 갈게요2</h3>
+    <h3 class="test1" name="test2">이쪽 모든 내용을 들고 갈게요3</h3>
+</body>
+</html>
