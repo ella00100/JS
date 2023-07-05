@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="알림" onclick="javascript:openAlert()">
+    <input type="button" value="확인" onclick="javascript:onpenConfirm()">
+    <input type="button" value="입력" onclick="javascript:openPrompt()">
+    <script>
+        /* window.alert("엥?") */
+        console.log("HIHI")
+
+        function openAlert(){
+            window.alert("알림창")
+        }
+        function onpenConfirm(){
+            if(window.confirm("확인해주세요")){
+                console.log("확인함")
+            } else {
+                console.log("취소함")
+            }
+        }
+
+        function openPrompt(){
+            var txt =  window.prompt("입력", "사용자입력")
+            console.log(txt)
+        }
+
+        console.log(navigator)
+        console.log(navigator.userAgent)
+
+        if(window.confirm('이동하시겠습니까?')){
+            history.forward();
+        } 
+    </script>
+
+</body>
+</html>
