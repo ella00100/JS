@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // JSON을 파싱하여 js객체로 만들기 
+    let test = `{
+        "squadName": "Super hero squad",
+        "homeTown": "Metro City",
+        "formed": 2016,
+        "secretBase": "Super tower",
+        "active": true}`
+    console.log(test)
+    let temp = JSON.parse(test);
+    console.log(temp)
+
+    // js 객체를 JSON 형태로 내기 위하여 직렬화(stringify)
+    let user = {
+        name: '홍길동',
+        area: '한양',
+        age: 20
+    }
+
+    let userJson = JSON.stringify(user);
+    console.log(userJson);
+    </script>
+</body>
+</html>
