@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.onload=function(){
+            //노드 생성
+            var title = document.createElement('h2');
+            title.setAttribute('style', 'color: red')
+            var msg = document.createTextNode("Hello!!");
+
+            console.log(title)
+            console.log(msg)
+            //tesxtNode를 element node에 추가
+            title.appendChild(msg);
+            document.body.appendChild(title);
+            
+            //이미지 추가!
+             // 프로퍼티 접근으로 속성 지정이 가능한 이유는
+            // 태그 기본 속성이기 때문에 만일 커스텀 속성의 경우 추가 안됨
+            var profile = document.createElement('img');
+            profile.src = '../img/night.png';
+            profile.width = 300
+            profile.height = 300
+            document.body.appendChild(profile)
+
+            // 커스텀 속성을 추가하고 싶은 경우 setAttribute() 사용 필수
+            profile.test = 'hello';
+            profile.setAttribute('test', 'hi')
+
+            // innerHTML으로 넣으면 body노드 아래 애들 다 덮어씀
+            //document.body.innerHTML = '<h3>luch time~</h3>'
+            //document.body.innerText='<h3>lucky lucky</h3>'
+        }
+    </script>
+</body>
+</html>
