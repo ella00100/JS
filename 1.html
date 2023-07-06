@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //get 방식
+        window.onload = async function(){
+            let url = "https://jsonplaceholder.typicode.com/posts/1";
+
+            let response = await fetch(url);
+            console.log(response);
+
+            let data = await response.json();
+            console.log(data.userId);
+
+            fetch(url)
+            .then((response)=> response.json()
+            ).then((data)=>
+            console.log(data))
+
+            //fetch() post 요청
+            let config = {
+                method : "POST", 
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify({
+                    title : "안녕하세요?",
+                    note : "어렵지 않아요",
+                    userName : "test",
+                }),
+            }
+
+            url = "https://jsonplaceholder.typicode.com/posts";
+            fetch(url, config)
+            .then((res)=> 
+            //console.log(res)
+            res.json())
+            .then((data)=>{
+                console.log(data)
+            })
+
+            //fetch() put 요청
+            config = {
+                method : "POST", 
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify({
+                    title : "안녕하세요?",
+                    note : "수정하세요",
+                    userName : "test",
+                }),
+            }
+
+            url = "https://jsonplaceholder.typicode.com/posts";
+            fetch(url, config)
+            .then((xxx)=>xxx.json())
+            .then((data)=> console.log(data))
+            
+        }
+    </script>
+    
+</body>
+</html>
