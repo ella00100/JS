@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue instance Sturucture</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h2>안녕</h2>
+        <h2>{{message}}</h2>
+        <span>클릭 카운트 : {{count}}</span>
+        <button @click="count++">클릭</button>
+    </div>
+    <script>
+        //Vue instance
+        new Vue({
+            el : "#app", //el속성
+            data : {    //data속성
+                message : "이렇게 생겼어요",
+                count: 0,
+            },
+            template: "",
+            methods: {
+            },
+            beforeCreate() {
+                console.log("beforeCreate!!" + this.count)
+            },
+            created() {
+                console.log("created!!" + this.count);
+                console.log("created 연결된 DOM?? " + this.$el);
+            },
+            mounted(){
+                console.log("mounted!!" + this.count);
+                this.message = "Data change!!";
+                console.log("mounted 연결된 DOM?? " + this.$el)
+            },
+            updated() {
+                console.log("updated!!" + this.count);
+                this.message = "Updated call";
+            },
+        })
+    </script>
+</body>
+</html>
