@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conciseMethod(간결한 메서드)</title>
+</head>
+<body>
+    <script>
+        // //ES6 이전
+        // const id = "student1",
+        // name = "길동",
+        // age = 20;
+        
+        // const user = {
+        //     id : id,
+        //     name : name,
+        //     age : age,
+        //     info : function(){
+        //         console.log("user info : " + this.id + 
+        //         " " + this.name + " " + this.age);
+        //     }
+        // };
+        // user.info()
+
+        //ES6 이후
+        const id = "student1",
+        name = "길동",
+        age = 20;
+        
+        const user = {
+            id,
+            name,
+            age,
+            info : function(){
+                console.log("user info : " + this.id + 
+                " " + this.name + " " + this.age);
+            }
+        };
+
+        user.info()
+    </script>
+
+</body>
+</html>
