@@ -3,39 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Property Shorthand (단축 속성명)</title>
+    <script>
+        //ES6 이전
+        // const id = "student1",
+        // name = "길동",
+        // age = 20;
+        
+        // const user = {
+        //     id : id,
+        //     name : name,
+        //     age : age,
+        // }
+        // console.log(user)
+
+        //ES6 이후
+        // 객체를 정의 할 때, 객체의 key값고 value값이 같은 경우,
+        //각각 표기하지 않고  줄여서 표기
+        const id = "student1",
+        name = "길동",
+        age = 20;
+        
+        const user = {
+            id,
+            name,
+            age,
+        }
+        console.log(user);
+    </script>
 </head>
 <body>
-    <script>
-        window.onload=function(){
-            //노드 생성
-            var title = document.createElement('h2');
-            title.setAttribute('style', 'color: red')
-            var msg = document.createTextNode("Hello!!");
-
-            console.log(title)
-            console.log(msg)
-            //tesxtNode를 element node에 추가
-            title.appendChild(msg);
-            document.body.appendChild(title);
-            
-            //이미지 추가!
-             // 프로퍼티 접근으로 속성 지정이 가능한 이유는
-            // 태그 기본 속성이기 때문에 만일 커스텀 속성의 경우 추가 안됨
-            var profile = document.createElement('img');
-            profile.src = '../img/night.png';
-            profile.width = 300
-            profile.height = 300
-            document.body.appendChild(profile)
-
-            // 커스텀 속성을 추가하고 싶은 경우 setAttribute() 사용 필수
-            profile.test = 'hello';
-            profile.setAttribute('test', 'hi')
-
-            // innerHTML으로 넣으면 body노드 아래 애들 다 덮어씀
-            //document.body.innerHTML = '<h3>luch time~</h3>'
-            //document.body.innerText='<h3>lucky lucky</h3>'
-        }
-    </script>
+    
 </body>
 </html>
