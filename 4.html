@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구조 분해 할당(DestructuringAssingment)</title>
+    <script>
+        //ES6이전 형태
+        const area = ["서울", "인천", "경기"]
+        {
+            const a1  = area[0];
+            const a2 = area[1];
+            const a3 = area[2];
+
+            console.log(a1, a2, a3)
+        }
+        //ES6이후 형태
+        {
+            const[a1, a2, a3] = area;
+            console.log(a1, a2, a3)
+        }
+
+        const student = {
+            name : "dung",
+            age : 20,
+            area : "Korea",
+            
+        }
+        //순서와 상관 없이 변수명과 프로퍼티명이 같은 경우 할당
+        //변수와 일치하는 프로퍼티가 없는 경우값 할당 x
+        // ==> 따라서 해당 변수 선언 후 초기화 안되어 undefined
+        {
+            let {id, name, age} = student;
+            console.log(id, name, age)
+        }
+        {
+            let {area, name, age} = student;
+            console.log(area, name, age)
+        }
+
+        //함수가 객체를 리턴하기 때문에 해당 객체의 프로퍼티와
+        //변수명의 일치를 비교하여 할당
+        function getStudent(){
+            return{
+                name : "dung",
+                age: 5,
+                area : "America"
+            }
+        }
+        { 
+            let { name, area, age} = getStudent();
+            console.log(name, area, age)
+        }
+
+        function showUserInfo({area, name, age}){
+            console.log("showUserInfo");
+            console.log(area, name, age);
+        }
+        showUserInfo(student);
+
+        // showUserInfo("China", "micky", 20) -> 이건 안됨
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
